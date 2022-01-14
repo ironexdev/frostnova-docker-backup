@@ -75,8 +75,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 WORKDIR /home/dockeruser/app
 
-# RUN composer install
-
 USER dockeruser
 
 EXPOSE 9000
+
+CMD ["sh", "-c", "composer install && php-fpm"]
